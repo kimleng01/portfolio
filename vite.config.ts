@@ -4,12 +4,14 @@ import path from "path"
 import tailwindcss from "@tailwindcss/vite"
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  base: '/portfolio/',
+export default defineConfig(( { command}) => {
+  return {
+      plugins: [react(), tailwindcss()],
+  base: command === 'build' ? '/portfolio/' : '/', 
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  }
 })
