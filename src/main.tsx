@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import AllRoutes from './Routes/index.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/portfolio'>
     <AllRoutes />
   </BrowserRouter>,
 )
